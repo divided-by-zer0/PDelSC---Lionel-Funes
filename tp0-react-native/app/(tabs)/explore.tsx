@@ -1,5 +1,3 @@
-import { Platform, StyleSheet } from 'react-native';
-
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 
@@ -16,7 +14,12 @@ export default function TabTwoScreen() {
           type="title"
           style={{
             fontFamily: 'Arial',
-            
+            color: '#ff00bfff',
+            animationName: {
+              '50%': { transform: [{ rotate: '180deg' }] },
+            },
+            animationIterationCount: 10000,
+            animationDuration: '30ms',
           }}>
           Estilos Adicionales
         </ThemedText>
@@ -24,11 +27,3 @@ export default function TabTwoScreen() {
       </ThemedView>
   );
 }
-
-const styles = StyleSheet.create({
-  titleContainer: {
-    backgroundColor: '#ff009dff',
-    flexDirection: 'row',
-    gap: 8,
-  },
-});
