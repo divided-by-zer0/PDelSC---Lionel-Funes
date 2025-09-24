@@ -7,8 +7,6 @@ export default function HomeScreen() {
     width: '100%',
     height: '100%',
     backgroundColor: '#ffffffff',
-    justifyContent: 'center',
-    alignItems: 'center',
   }}>
       <ThemedText
         type="title"

@@ -15,11 +15,6 @@ export default function TabTwoScreen() {
           style={{
             fontFamily: 'Arial',
             color: '#ff00bfff',
-            animationName: {
-              '50%': { transform: [{ rotate: '180deg' }] },
-            },
-            animationIterationCount: 10000,
-            animationDuration: '30ms',
           }}>
           Estilos Adicionales
         </ThemedText>
