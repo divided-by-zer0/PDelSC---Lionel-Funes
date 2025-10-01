@@ -3,6 +3,7 @@ import { View, Text, Image, TextInput, Pressable, ScrollView, StyleSheet} from '
 
 export default function App() {
   const [inputValue, setInputValue] = useState('');
+  const [message, setMessage] = useState("Todavía no tocaste el botón");
 
   return (
     <ScrollView style={styles.container}>
@@ -56,14 +57,16 @@ export default function App() {
       <View style={styles.card}>
         <Text style={styles.componentName}>Pressable</Text>
         <Pressable
-          style={({ pressed }) => [
-            styles.demoButton,
-            { backgroundColor: pressed ? '#00aa00' : '#0077ff' },
-          ]}
-          onPress={() => alert('¡Presionaste el botón!')}
-        >
-          <Text style={styles.buttonText}>Presióname</Text>
-        </Pressable>
+        style={({ pressed }) => [
+          styles.button,
+          { backgroundColor: pressed ? "#00aa00" : "#0077ff" },
+        ]}
+        onPress={() => setMessage("¡Botón presionado!")}
+      >
+        <Text style={styles.buttonText}>Presióname</Text>
+      </Pressable>
+
+      <Text style={styles.message}>{message}</Text>
         <Text style={styles.description}>
           Detecta interacciones táctiles (toques, presiones, etc.). 
           Ideal para botones personalizados.
@@ -175,5 +178,14 @@ const styles = StyleSheet.create({
   scrollText: {
     fontWeight: 'bold',
     color: '#222',
+  },
+  button: {
+    paddingVertical: 12,
+    paddingHorizontal: 20,
+    borderRadius: 8,
+  },
+  message: {
+    marginTop: 20,
+    fontSize: 16,
   },
 });
